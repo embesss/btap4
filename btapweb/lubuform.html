@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu Tham Gia CLB Tin Học LuBu</title>
+    <link rel="stylesheet" href="lubucss.css">
+    <script language="JavaScript">
+        function chuyennganh() {
+            var chonchuyennganh = document.getElementById("chonchuyennganh").value;
+            var hienthisotruong = document.getElementById("hienthisotruong");
+
+            if(chonchuyennganh == "HeThong") {
+                hienthisotruong.innerHTML = "Phân tích & Thiết kế";
+            }
+            else if (chonchuyennganh == "PhanMem") {
+                hienthisotruong.innerHTML = "Lập trình";
+            }
+            else {
+                hienthisotruong.innerHTML = "Quản lý mạng";
+            }
+            
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form id="form1">
+        <h2>PHIẾU THAM GIA CLB TIN HỌC <span style="color: lightskyblue; font-weight: bold;">LUBU</span></h2>
+        <fieldset>
+                <table>
+                    <tr>
+                        <td>Mã Sinh Viên:</td>
+                        <td><input type="text" id="mssv" placeholder="Nhập Mã SV"></td>
+                    </tr> 
+                    <tr>
+                        <td>Họ và tên:</td>
+                        <td><input type="text" id="hotensv" placeholder="Nhập họ và tên"></td>
+                    </tr>
+                    <tr>
+                        <td>Tuổi:</td>
+                        <td><input type="number" id="tuoisv" placeholder="Nhập tuổi > 18"></td>
+                    </tr>
+                    <tr>
+                        <td>Ngoại Ngữ:</td>
+                        <td>
+                            <input type="checkbox"  name="ngonngu" value="Anh">Anh
+                           <input type="checkbox" name="ngonngu" value="Pháp">Pháp
+                            <input type="checkbox" name="ngonngu"  value="Nhật">Nhật
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chuyên Ngành:</td>
+                        <td>
+                            <select id="chonchuyennganh" onchange="chuyennganh();">
+                                <option value="HeThong">Hệ Thống</option>
+                                <option value="PhanMem">Phần Mềm</option>
+                                <option value="MangMayTinh">Mạng máy tính</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sở Trường:</td>
+                        <td><span id="hienthisotruong"></span></td>
+                    </tr>
+
+                    
+            </table>
+            
+        </fieldset>
+        
+    </form>
+</body>
+</html>
